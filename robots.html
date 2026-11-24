@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robots | Texas Humanoids</title>
+  <meta name="description" content="Bob the Walker, the Texas Humanoid and BevoBot: the robots Texas Humanoids is building at UT Austin.">
+  <meta property="og:title" content="Robots | Texas Humanoids">
+  <meta property="og:description" content="Bob the Walker, the Texas Humanoid and BevoBot: the robots Texas Humanoids is building at UT Austin.">
+  <meta property="og:image" content="images/web/whole_group.jpg">
+  <link rel="icon" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand" aria-label="Texas Humanoids home">
+        <img src="images/logo.png" alt="">
+        <span>TEXAS HUMANOIDS</span>
+      </a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="robots.html" aria-current="page">Robots</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="partners.html">Partners</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="btn btn-solid">Partner with us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <div class="eyebrow r"><span>Robots</span></div>
+        <h1 class="r d1">Robots</h1>
+        <p class="lede r d2">We are building three robots in sequence: a bipedal walker to test our controls, the Texas Humanoid for research labs, and BevoBot, a larger custom humanoid.</p>
+        <nav class="subnav r d3" aria-label="Robots">
+          <a href="#walker">Bob the Walker</a><a href="#texas-humanoid">Texas Humanoid</a><a href="#bevobot">BevoBot</a><a href="#arm">Tele-operated arm</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="sect" id="walker">
+      <div class="wrap">
+        <div class="robot-intro">
+          <div class="media r"><img src="images/web/walker.jpg" alt="Bob the Walker hanging from a support rig between two lab benches" width="1350" height="1800"></div>
+          <div class="copy">
+            <span class="kind r"><b>01</b> &middot; Bipedal walker &middot; Fall 2026</span>
+            <h2 class="h2 r d1">Bob the Walker</h2>
+            <p class="r d2">Bob is a simple bipedal platform that gives our software team real hardware to test code on. We built it quickly and cheaply so controls work could start before the Texas Humanoid is finished.</p>
+            <p class="r d2">The legs use RobStride actuators, chosen for their cost and capability. The structure is 3D-printed parts on aluminum extrusion, which kept the design easy to change.</p>
+            <div class="r d3">
+            <dl class="specs">
+              <div><dt>Height</dt><dd>3 ft 4 in</dd></div>
+              <div><dt>Proportions</dt><dd>Joint lengths from a 4 ft 8 in person</dd></div>
+              <div><dt>Actuators</dt><dd>10 RobStride (RS02, RS03, RS06), five per leg</dd></div>
+              <div><dt>Structure</dt><dd>3D-printed parts, aluminum extrusion</dd></div>
+              <div><dt>Simulation</dt><dd>NVIDIA Isaac Lab on NVIDIA Brev</dd></div>
+              <div><dt>Status</dt><dd><span class="live">PID control on hardware</span></dd></div>
+            </dl>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="h3 r">How we built it</h3>
+        <div class="steps">
+          <div class="step r">
+            <div class="media paper"><img src="images/web/walker-actuator-map.jpg" alt="Diagram of the walker legs with the RobStride model at each joint" width="752" height="1100" class="contain" loading="lazy"></div>
+            <div class="n">01</div>
+            <h4>Skeleton</h4>
+            <p>We scaled joint lengths from a human, estimated the load on each joint and picked a RobStride model to match.</p>
+          </div>
+          <div class="step r">
+            <div class="media paper"><img src="images/web/cad-walker-v1.jpg" alt="First version of the walker CAD" width="927" height="1200" class="contain" loading="lazy"></div>
+            <div class="n">02</div>
+            <h4>Mechanical design</h4>
+            <p>We packaged the actuators into two versions of the legs. Support bearings spread each joint’s load across two contact surfaces.</p>
+          </div>
+          <div class="step r">
+            <div class="media"><img src="images/web/walker-urdf.jpg" alt="URDF model of the walker in a simulator" width="716" height="900" class="contain" loading="lazy"></div>
+            <div class="n">03</div>
+            <h4>Simulation model</h4>
+            <p>We converted the CAD into a URDF with revolute joints and limits, per-part densities from the slicer, and a root link and collision geometry.</p>
+          </div>
+          <div class="step r">
+            <div class="media paper"><img src="images/web/actuator-dyno.jpg" alt="CAD of the static dynamometer used to test actuators" width="1000" height="653" class="contain" loading="lazy"></div>
+            <div class="n">04</div>
+            <h4>Actuator testing</h4>
+            <p>Before integration we wired every actuator, confirmed each one on the CAN bus and measured its torque on a static dynamometer.</p>
+          </div>
+          <div class="step r">
+            <div class="media"><img src="images/web/walker-isaaclab.jpg" alt="Several walker models training in NVIDIA Isaac Lab" width="1280" height="720" loading="lazy"></div>
+            <div class="n">05</div>
+            <h4>Training</h4>
+            <p>We trained walking and balancing policies in Isaac Lab on NVIDIA Brev. In simulation the walker reaches 1 m/s.</p>
+          </div>
+          <div class="step r">
+            <div class="media"><img src="images/web/build-hang-test.jpg" alt="Team members testing the walker on a support rig" width="1050" height="1400" loading="lazy"></div>
+            <div class="n">06</div>
+            <h4>Sim-to-real</h4>
+            <p>On hardware the learned policies caused unstable oscillations, so we moved to a PID controller with stiffer gains on every joint except the ankles.</p>
+          </div>
+        </div>
+
+        <h3 class="h3 r">Next steps</h3>
+        <div class="ways cols-3">
+          <div class="way r">
+            <div class="n">01</div>
+            <h4>Balance</h4>
+            <p>Tune the PID controller and add reinforcement learning for more robust stabilization.</p>
+          </div>
+          <div class="way r">
+            <div class="n">02</div>
+            <h4>Walk</h4>
+            <p>Bring the walking policy onto hardware and iterate until the walker walks reliably.</p>
+          </div>
+          <div class="way r">
+            <div class="n">03</div>
+            <h4>Machine</h4>
+            <p>Rebuild the structure in metal for more rigidity than 3D-printed parts allow.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sect light" id="texas-humanoid">
+      <div class="wrap">
+        <div class="robot-intro">
+          <div class="media paper r"><img src="images/web/cad-texas-humanoid.jpg" alt="CAD render of the Texas Humanoid upper body with longhorn-style head" width="1082" height="1400" loading="lazy"></div>
+          <div class="copy">
+            <span class="kind r"><b>02</b> &middot; Open-source humanoid &middot; Unveiling April 2027</span>
+            <h2 class="h2 r d1">Texas Humanoid</h2>
+            <p class="r d2">The Texas Humanoid is an open-source, lower-cost humanoid for research labs. Before designing it, we asked several UT Austin labs what they need from an affordable humanoid and wrote their feedback into a product requirements document.</p>
+            <p class="r d2">The design is in progress. A preliminary design review is planned for December 2026 to January 2027, and we plan to unveil the robot in April 2027.</p>
+            <div class="r d3">
+            <dl class="specs">
+              <div><dt>Type</dt><dd>Open-source research humanoid</dd></div>
+              <div><dt>Designed for</dt><dd>UT Austin research labs</dd></div>
+              <div><dt>Design review</dt><dd>December 2026 &ndash; January 2027</dd></div>
+              <div><dt>Unveiling</dt><dd>April 2027</dd></div>
+              <div><dt>Status</dt><dd><span class="live">Preliminary design</span></dd></div>
+            </dl>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="h3 r">Key requirements</h3>
+        <div class="ways cols-3">
+          <div class="way r">
+            <div class="n">01</div>
+            <h4>Manipulation</h4>
+            <p>Human-like reach, gestures and dexterity.</p>
+          </div>
+          <div class="way r">
+            <div class="n">02</div>
+            <h4>Modularity</h4>
+            <p>Swappable hands, sensors and compute.</p>
+          </div>
+          <div class="way r">
+            <div class="n">03</div>
+            <h4>Robustness</h4>
+            <p>Withstands falls, failed controllers and repeated testing.</p>
+          </div>
+        </div>
+
+        <h3 class="h3 r">Design approach</h3>
+        <div class="ways">
+          <div class="way r">
+            <div class="n">01</div>
+            <h4>Define requirements</h4>
+            <p>Walking, squatting, manipulation and payload requirements, with representative motions, joint ranges and load cases.</p>
+          </div>
+          <div class="way r">
+            <div class="n">02</div>
+            <h4>Parametric model</h4>
+            <p>A parametric robot model for comparing actuator placements and architectures.</p>
+          </div>
+          <div class="way r">
+            <div class="n">03</div>
+            <h4>Simulate and analyze</h4>
+            <p>Joint torques, speeds and loads from simulation, used to size the actuators.</p>
+          </div>
+          <div class="way r">
+            <div class="n">04</div>
+            <h4>Iterate and validate</h4>
+            <p>Check predicted loads against actuator limits, refine geometry and packaging, then move into CAD, FEA and hardware tests.</p>
+          </div>
+        </div>
+
+        <h3 class="h3 r">Subsystems in progress</h3>
+        <div class="steps cols-4">
+          <div class="step r">
+            <div class="media paper"><img src="images/web/cad-neck.jpg" alt="CAD of the neck and head" width="773" height="1000" class="contain" loading="lazy"></div>
+            <div class="n">01</div>
+            <h4>Neck</h4>
+            <p>Yaw-pitch neck.</p>
+          </div>
+          <div class="step r">
+            <div class="media paper"><img src="images/web/cad-shoulder.jpg" alt="CAD of the shoulder actuators" width="773" height="1000" class="contain" loading="lazy"></div>
+            <div class="n">02</div>
+            <h4>Shoulder</h4>
+            <p>Pitch-roll-yaw shoulder. The pitch actuator is angled to avoid a singularity.</p>
+          </div>
+          <div class="step r">
+            <div class="media paper"><img src="images/web/cad-elbow.jpg" alt="CAD of the elbow joint" width="773" height="1000" class="contain" loading="lazy"></div>
+            <div class="n">03</div>
+            <h4>Elbow</h4>
+            <p>Pitch-roll elbow.</p>
+          </div>
+          <div class="step r">
+            <div class="media paper"><img src="images/web/cad-wrist.jpg" alt="CAD of the wrist and gripper" width="773" height="1000" class="contain" loading="lazy"></div>
+            <div class="n">04</div>
+            <h4>Wrist</h4>
+            <p>Wrist fitted with the open-source UMI gripper.</p>
+          </div>
+          <div class="step r">
+            <div class="media paper"><img src="images/web/cad-knee.jpg" alt="CAD of the four-bar knee" width="773" height="1000" class="contain" loading="lazy"></div>
+            <div class="n">05</div>
+            <h4>Knee</h4>
+            <p>Knee joint driven through a four-bar linkage.</p>
+          </div>
+          <div class="step r">
+            <div class="media paper"><img src="images/web/cad-foot.jpg" alt="CAD of the foot" width="1100" height="850" class="contain" loading="lazy"></div>
+            <div class="n">06</div>
+            <h4>Foot</h4>
+            <p>Spring-loaded foot with toe pitch.</p>
+          </div>
+          <div class="step r">
+            <div class="media paper"><img src="images/web/cad-lower-leg.jpg" alt="CAD of the lower leg linkage" width="773" height="1000" class="contain" loading="lazy"></div>
+            <div class="n">07</div>
+            <h4>Lower leg</h4>
+            <p>Parallel mechanism driven by rotary actuators.</p>
+          </div>
+          <div class="step r">
+            <div class="media paper"><img src="images/web/cad-actuator.jpg" alt="Exploded CAD of the custom actuator" width="688" height="900" class="contain" loading="lazy"></div>
+            <div class="n">08</div>
+            <h4>Actuator</h4>
+            <p>Custom actuator benchmarked against the RobStride RS02: an off-the-shelf drone motor with encoders and FOC control, and a planetary gearbox.</p>
+          </div>
+          <div class="step r">
+            <div class="media"><img src="images/web/finger-prototype.jpg" alt="3D-printed tendon-driven finger prototype" width="900" height="1200" loading="lazy"></div>
+            <div class="n">09</div>
+            <h4>Hands</h4>
+            <p>A 3D-printed, tendon-driven finger with minimal tendon cross-talk. We are comparing FDM and SLA printing for fine features.</p>
+          </div>
+          <div class="step r">
+            <div class="media paper"><img src="images/web/power-schematic.jpg" alt="Power architecture schematic" width="1600" height="1131" class="contain" loading="lazy"></div>
+            <div class="n">10</div>
+            <h4>Electrical</h4>
+            <p>A custom SPI-to-CAN board for multiple CAN channels, a power distribution PCB, a custom battery, and fault detection with safety stops.</p>
+          </div>
+          <div class="step r">
+            <div class="media"><img src="images/web/perception-tracking.jpg" alt="Frames from the video capture pipeline" width="1800" height="508" loading="lazy"></div>
+            <div class="n">11</div>
+            <h4>Perception</h4>
+            <p>ROS nodes for video capture, a data pipeline for motor telemetry and images, and human tracking with YOLOX-Nano.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sect" id="bevobot">
+      <div class="wrap">
+        <div class="robot-intro">
+          <div class="media paper r"><img src="images/web/arm-cad.png" alt="CAD model of humanoid arm assemblies" width="410" height="712" loading="lazy"></div>
+          <div class="copy">
+            <span class="kind r"><b>03</b> &middot; Custom humanoid &middot; Fall 2027 &ndash; Spring 2028</span>
+            <h2 class="h2 r d1">BevoBot</h2>
+            <p class="r d2">BevoBot will be a larger, custom-built humanoid developed with Dr. Justin Hart's Living with Robots Lab at UT Austin, optimized for common human tasks and gestures.</p>
+            <p class="r d2">It will build on what we learn from the walker and the Texas Humanoid: a stiffer structure, less mass, integrated wiring, and better simulation and control infrastructure.</p>
+            <div class="r d3">
+            <dl class="specs">
+              <div><dt>Target height</dt><dd>5 ft 6 in &ndash; 5 ft 8 in</dd></div>
+              <div><dt>Actuators</dt><dd>Custom, designed in-house</dd></div>
+              <div><dt>Partner</dt><dd>Living with Robots Lab, UT Austin</dd></div>
+              <div><dt>Timeline</dt><dd>Fall 2027 &ndash; Spring 2028</dd></div>
+              <div><dt>Status</dt><dd><span class="live">Planning</span></dd></div>
+            </dl>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="h3 r">Long-term direction</h3>
+        <div class="ways cols-3">
+          <div class="way r">
+            <div class="n">01</div>
+            <h4>Research platform</h4>
+            <p>Give UT Austin labs affordable, capable humanoids, and the engineers to work on them, for real-world research.</p>
+          </div>
+          <div class="way r">
+            <div class="n">02</div>
+            <h4>Competition</h4>
+            <p>Help start an FSAE-style humanoid competition between university teams.</p>
+          </div>
+          <div class="way r">
+            <div class="n">03</div>
+            <h4>Each generation</h4>
+            <p>Use advances in reinforcement learning, researcher feedback and human interaction studies to make each robot more capable than the last.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sect light" id="arm">
+      <div class="wrap platforms-head" style="align-items:center">
+        <div>
+          <span class="kind r">Earlier project &middot; Summer 2026</span>
+          <h2 class="h2 r d1">Tele-operated arm</h2>
+          <p class="lede r d2" style="margin-top:24px">Over the summer of 2026, before the team launched, we designed and built a tele-operated robot arm.</p>
+        </div>
+        <figure class="arm-photo r"><img src="images/web/teleop-arm.jpg" alt="The 3D-printed tele-operated robot arm" width="787" height="1400" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="wrap platforms-head">
+        <h2 class="h2 r" style="margin-top:0">Follow the build</h2>
+        <div class="r d1">
+          <p class="lede dim">We post progress on our robots as we go. The gallery has photos and renders from every stage.</p>
+          <div class="actions">
+            <a href="gallery.html" class="btn btn-solid">View the gallery <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></a>
+          <a href="https://linktr.ee/texas-humanoids" class="btn btn-line">Our links</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-row">
+        <p>Undergraduate humanoid robotics at The University of Texas at Austin.</p>
+        <div class="foot-links">
+          <div>
+            <h4>Explore</h4>
+            <a href="robots.html">Robots</a><a href="team.html">Team</a><a href="gallery.html">Gallery</a><a href="partners.html">Partners</a>
+          </div>
+          <div>
+            <h4>Connect</h4>
+            <a href="https://linktr.ee/texas-humanoids" target="_blank" rel="noopener">Linktree</a>
+            <a href="https://www.linkedin.com/company/texas-humanoids" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://discord.gg/mYTj5yCFnS" target="_blank" rel="noopener">Discord</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wordmark" aria-hidden="true">TEXAS HUMANOIDS</div>
+    <div class="wrap" style="position:relative;background:var(--ink)">
+      <div class="foot-base">
+        <span>&copy; 2026 Texas Humanoids</span>
+        <span>Austin, Texas</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

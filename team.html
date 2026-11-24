@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team | Texas Humanoids</title>
+  <meta name="description" content="The engineers, leadership and faculty advisors of Texas Humanoids at UT Austin.">
+  <meta property="og:title" content="Team | Texas Humanoids">
+  <meta property="og:description" content="The engineers, leadership and faculty advisors of Texas Humanoids at UT Austin.">
+  <meta property="og:image" content="images/web/whole_group.jpg">
+  <link rel="icon" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand" aria-label="Texas Humanoids home">
+        <img src="images/logo.png" alt="">
+        <span>TEXAS HUMANOIDS</span>
+      </a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="robots.html">Robots</a></li>
+        <li><a href="team.html" aria-current="page">Team</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="partners.html">Partners</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="btn btn-solid">Partner with us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <div class="eyebrow r"><span>Team</span></div>
+        <h1 class="r d1">Team</h1>
+        <p class="lede r d2">Texas Humanoids was founded in August 2026. 160 students applied in our first recruiting cycle, and 40 engineers now work across 11 subteams.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap" style="padding-top:clamp(40px,5vw,72px)">
+        <figure class="group-photo r"><img src="images/web/whole_group.jpg" alt="The full Texas Humanoids team on the stairs of the EER building" width="2400" height="1604" loading="lazy"><figcaption>Texas Humanoids, Fall 2026</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="sect light">
+      <div class="wrap">
+        <div class="eyebrow r"><span class="idx">01</span><span class="rule"></span><span>History</span></div>
+        <h2 class="h2 r d1">Our first semester</h2>
+        <div class="history">
+          <div class="r"><time>Aug 2026</time><p>Founded by three engineers as UT Austin's first undergraduate humanoid team.</p></div>
+          <div class="r d1"><time>Fall 2026</time><p>160 applicants in our first recruiting cycle.</p></div>
+          <div class="r d2"><time>Fall 2026</time><p>40 engineers selected across 11 subteams.</p></div>
+          <div class="r d3"><time>Nov 2026</time><p>First walker leg designed, printed and assembled.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="teams">
+      <div class="wrap">
+        <div class="platforms-head">
+          <div>
+            <div class="eyebrow r"><span class="idx">02</span><span class="rule"></span><span>Teams</span></div>
+            <h2 class="h2 r d1">Four teams</h2>
+          </div>
+          <p class="lede r d2">Mechanical, electrical and software are split into 11 engineering subteams that together cover the full robot. Operations supports the whole organization.</p>
+        </div>
+
+        <div class="teams-ui r">
+          <div class="tablist" role="tablist" aria-label="Teams">
+            <button class="tab" role="tab" id="tab-mech" aria-controls="p-mech" aria-selected="true"><small>01</small>Mechanical</button>
+            <button class="tab" role="tab" id="tab-elec" aria-controls="p-elec" aria-selected="false" tabindex="-1"><small>02</small>Electrical</button>
+            <button class="tab" role="tab" id="tab-soft" aria-controls="p-soft" aria-selected="false" tabindex="-1"><small>03</small>Software</button>
+            <button class="tab" role="tab" id="tab-ops" aria-controls="p-ops" aria-selected="false" tabindex="-1"><small>04</small>Operations</button>
+          </div>
+          <div>
+            <div class="panel" role="tabpanel" id="p-mech" aria-labelledby="tab-mech">
+              <div class="panel-img"><img src="images/web/mechanical.jpg" alt="Texas Humanoids mechanical team" width="1800" height="1203" loading="lazy"></div>
+              <div class="panel-copy">
+                <div>
+                  <p>The mechanical team designs the robot’s actuators, upper body, lower body and hands, from structural simulation and torque sizing through prototyping and testing.</p>
+                  <div class="chips"><span class="chip">Actuators</span><span class="chip">Upper body</span><span class="chip">Lower body</span><span class="chip">Hands</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="panel" role="tabpanel" id="p-elec" aria-labelledby="tab-elec" hidden>
+              <div class="panel-img"><img src="images/web/electrical.jpg" alt="Texas Humanoids electrical team" width="1800" height="1203" loading="lazy"></div>
+              <div class="panel-copy">
+                <div>
+                  <p>The electrical team handles embedded systems, power systems and sensor integration, including custom CAN boards, power distribution and battery design.</p>
+                  <div class="chips"><span class="chip">Embedded systems</span><span class="chip">Power systems</span><span class="chip">Sensor integration</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="panel" role="tabpanel" id="p-soft" aria-labelledby="tab-soft" hidden>
+              <div class="panel-img"><img src="images/web/software.jpg" alt="Texas Humanoids software team" width="1800" height="1203" loading="lazy"></div>
+              <div class="panel-copy">
+                <div>
+                  <p>The software team works on middleware, perception, controls and autonomy, including teleoperation, kinematic controllers and reinforcement learning for walking.</p>
+                  <div class="chips"><span class="chip">Middleware</span><span class="chip">Perception</span><span class="chip">Controls</span><span class="chip">Autonomy</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="panel" role="tabpanel" id="p-ops" aria-labelledby="tab-ops" hidden>
+              <div class="panel-img"><img src="images/web/operations.jpg" alt="Texas Humanoids operations team" width="1800" height="1203" loading="lazy"></div>
+              <div class="panel-copy">
+                <div>
+                  <p>Operations runs corporate relations, finance, marketing and events for the organization.</p>
+                  <div class="chips"><span class="chip">Corporate relations</span><span class="chip">Finance</span><span class="chip">Marketing</span><span class="chip">Events</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="people light">
+      <div class="wrap">
+        <div class="eyebrow r"><span class="idx">03</span><span class="rule"></span><span>Leadership</span></div>
+        <h2 class="h2 r d1">Leadership</h2>
+
+        <div class="leads">
+          <div class="lead r">
+            <h3>Aakash Akkineni</h3>
+            <div class="role">Engineering Head</div>
+            <div class="prev">Previously</div>
+            <ul><li>Tesla Optimus</li><li>Gradient Robotics</li><li>Relativity Space</li><li>Apple</li><li>SpaceX</li></ul>
+          </div>
+          <div class="lead r d1">
+            <h3>Aniketh Subramanian</h3>
+            <div class="role">Engineering Head</div>
+            <div class="prev">Previously</div>
+            <ul><li>Tesla Optimus</li><li>Sandia Labs</li><li>Lockheed Martin</li><li>ARL</li></ul>
+          </div>
+          <div class="lead r d2">
+            <h3>Gilbert Khoi Tran</h3>
+            <div class="role">Operations Lead</div>
+            <div class="prev">Previously</div>
+            <ul><li>Sierra Nevada Corp.</li><li>FTI Delta</li><li>IBM</li><li>HyperBase</li></ul>
+          </div>
+        </div>
+
+        <div class="exp r">
+          <span class="exp-label">Team members bring experience from</span>
+          <ul><li>Google</li><li>Apple</li><li>Blue Origin</li><li>SpaceX</li><li>Paradigm Robotics</li><li>General Motors</li><li>Tesla Optimus</li><li>Lockheed Martin</li><li>Sandia Labs</li><li>IBM</li></ul>
+        </div>
+
+        <div class="advisors-head">
+          <div class="eyebrow r"><span class="idx">04</span><span class="rule"></span><span>Faculty advisors</span></div>
+        </div>
+        <div class="advisors">
+          <div class="advisor r">
+            <div class="advisor-img"><img src="images/web/sentis.jpg" alt="Dr. Luis Sentis" width="900" height="675" loading="lazy"></div>
+            <div>
+              <div class="role">Advisor</div>
+              <h3>Dr. Luis Sentis</h3>
+              <div class="title">Professor, Aerospace Engineering &amp; Engineering Mechanics, and General Dynamics Endowed Faculty Fellow, UT Austin</div>
+              <p class="bio">Leads the Human Centered Robotics Laboratory. UT Austin's lead for DARPA's Robotics Challenge with NASA Johnson Space Center on the Valkyrie humanoid, NASA Elite Team Award recipient, and a founding member and innovation advisor of Apptronik. PhD and MS from Stanford.</p>
+            </div>
+          </div>
+          <div class="advisor r d1">
+            <div class="advisor-img"><img src="images/web/dfk.jpg" alt="Dr. David Fridovich-Keil" width="900" height="675" loading="lazy"></div>
+            <div>
+              <div class="role">Sponsor &amp; Advisor</div>
+              <h3>Dr. David Fridovich-Keil</h3>
+              <div class="title">Assistant Professor, Aerospace Engineering &amp; Engineering Mechanics, UT Austin</div>
+              <p class="bio">Affiliated with Texas Robotics, the Oden Institute and the Center for Autonomy. His research spans optimal control, dynamic game theory, learning for control and robot safety. PhD from UC Berkeley, postdoc at Stanford, and recipient of an NSF Graduate Research Fellowship and an NSF CAREER Award.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="wrap platforms-head">
+        <h2 class="h2 r" style="margin-top:0">Join the team</h2>
+        <div class="r d1">
+          <p class="lede dim">Recruiting dates and applications are posted on our Linktree.</p>
+          <div class="actions">
+            <a href="https://linktr.ee/texas-humanoids" class="btn btn-solid">Linktree <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-row">
+        <p>Undergraduate humanoid robotics at The University of Texas at Austin.</p>
+        <div class="foot-links">
+          <div>
+            <h4>Explore</h4>
+            <a href="robots.html">Robots</a><a href="team.html">Team</a><a href="gallery.html">Gallery</a><a href="partners.html">Partners</a>
+          </div>
+          <div>
+            <h4>Connect</h4>
+            <a href="https://linktr.ee/texas-humanoids" target="_blank" rel="noopener">Linktree</a>
+            <a href="https://www.linkedin.com/company/texas-humanoids" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://discord.gg/mYTj5yCFnS" target="_blank" rel="noopener">Discord</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wordmark" aria-hidden="true">TEXAS HUMANOIDS</div>
+    <div class="wrap" style="position:relative;background:var(--ink)">
+      <div class="foot-base">
+        <span>&copy; 2026 Texas Humanoids</span>
+        <span>Austin, Texas</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>
