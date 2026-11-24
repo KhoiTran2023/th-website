@@ -239,6 +239,7 @@ section[id] { scroll-margin-top: 64px; }
 .marquee-track .mq { height: auto; margin: 0 clamp(36px, 4vw, 64px); opacity: .7; flex: none; }
 .marquee-track .white { filter: brightness(0) invert(1); }
 .marquee-track .apptronik { width: 240px; }
+.marquee-track .amd { width: 64px; }
 .marquee-track .misumi { width: 200px; filter: grayscale(1) invert(1); mix-blend-mode: screen; }
 .marquee-track .ansys { width: 80px; }
 .marquee-track .argon { width: 84px; mix-blend-mode: screen; }
@@ -363,6 +364,7 @@ section[id] { scroll-margin-top: 64px; }
 .logo-cell:hover img { opacity: 1; }
 .logo-cell .white { filter: brightness(0) invert(1); }
 .logo-cell .apptronik { width: min(70%, 480px); }
+.logo-cell .amd { width: min(30%, 140px); }
 .logo-cell .misumi { width: min(82%, 340px); filter: grayscale(1) invert(1); mix-blend-mode: screen; }
 .logo-cell .ansys { width: min(42%, 128px); }
 .logo-cell .argon { width: min(70%, 124px); mix-blend-mode: screen; }
