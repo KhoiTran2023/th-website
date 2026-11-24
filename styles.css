@@ -359,13 +359,13 @@ section[id] { scroll-margin-top: 64px; }
   height: clamp(120px, 10vw, 150px); background: var(--ink);
 }
 .logo-cell.t1 { grid-column: span 6; height: clamp(220px, 20vw, 300px); }
-.logo-cell.t2 { grid-column: span 3; height: clamp(150px, 13vw, 200px); }
+.logo-cell.t2 { grid-column: span 2; height: clamp(150px, 13vw, 200px); }
 .logo-cell img { height: auto; opacity: .85; transition: opacity .3s; }
 .logo-cell:hover img { opacity: 1; }
 .logo-cell .white { filter: brightness(0) invert(1); }
 .logo-cell .apptronik { width: min(70%, 480px); }
-.logo-cell .amd { width: min(30%, 140px); }
-.logo-cell .misumi { width: min(82%, 340px); filter: grayscale(1) invert(1); mix-blend-mode: screen; }
+.logo-cell .amd { width: min(30%, 96px); }
+.logo-cell .misumi { width: min(86%, 300px); filter: grayscale(1) invert(1); mix-blend-mode: screen; }
 .logo-cell .ansys { width: min(42%, 128px); }
 .logo-cell .argon { width: min(70%, 124px); mix-blend-mode: screen; }
 .logo-cell .vectornav { width: min(50%, 84px); }
